@@ -9,12 +9,6 @@ function HomeScreen() {
     return (
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <Text>Home!</Text>
-            <Icon.Button
-                name="facebook"
-                backgroundColor="#3b5998"
-            >
-                Login with Facebook
-            </Icon.Button>
         </View>
     );
 }
