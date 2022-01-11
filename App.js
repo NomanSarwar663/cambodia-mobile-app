@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {LoginScreen} from "./src/components/auth/Login";
+import Account from "./src/components/auth/index";
 
 function HomeScreen() {
     return (
@@ -60,7 +61,7 @@ export default function App() {
                 <Tab.Screen name="Home" component={HomeScreen}/>
                 <Tab.Screen name="Booking" component={Booking}/>
                 <Tab.Screen name="Favourite" component={Favourite}/>
-                <Tab.Screen name="Account" component={LoginScreen}/>
+                <Tab.Screen name="Account" component={Account}/>
             </Tab.Navigator>
         </NavigationContainer>
     );

@@ -90,7 +90,7 @@ function LoginScreen() {
                                 }}>
                                     Do you have an account?
                                 </Text>
-                                <Text style={{
+                                <Text onPress={()=> setIsLogin(false)} style={{
                                     ...styles.subHeading,
                                     color: "red",
                                     paddingLeft: 6
