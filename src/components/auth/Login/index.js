@@ -14,7 +14,7 @@ function LoginScreen() {
                 <View style={styles.container}>
                     <View style={styles.header}>
                         <Text style={styles.heading}>
-                            Log In or Create an accountxs
+                            Log In or Create an account
                         </Text>
                         <Text style={styles.subHeading}>
                             Enter you email address to start
