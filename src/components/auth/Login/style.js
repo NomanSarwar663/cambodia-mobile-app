@@ -10,6 +10,12 @@ const styles = StyleSheet.create({
         marginTop: "50%",
         borderRadius: 30,
     },
+    tinyLogo:{
+        position:"absolute",
+        top:50,
+        left:"37%",
+        alignItems: "center",
+    },
     header: {
         paddingTop: 20,
         alignItems: "center",

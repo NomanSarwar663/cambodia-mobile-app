@@ -1,4 +1,4 @@
-import {ScrollView, Text, View} from "react-native";
+import {Image, Text, View} from "react-native";
 import * as React from "react";
 import styles from "./style"
 import {ImageBackground, TextInput} from "react-native";
@@ -11,6 +11,11 @@ function LoginScreen() {
     return (
         <View style={styles.wrapper}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+                <View style={styles.tinyLogo}>
+                    <Image
+                        source={require('../../../images/logo.png')}
+                    />
+                </View>
                 <View style={styles.container}>
                     <View style={styles.header}>
                         <Text style={styles.heading}>

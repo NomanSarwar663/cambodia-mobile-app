@@ -1,9 +1,8 @@
-import {ScrollView, Text, View} from "react-native";
+import {Image, Text, View} from "react-native";
 import * as React from "react";
 import styles from "./style"
 import {ImageBackground, TextInput} from "react-native";
 import {Button, CheckBox} from "react-native-elements"
-import {SocialButtons} from "./SocialButtons";
 
 const image = {uri: "https://i.pinimg.com/236x/0d/91/76/0d9176f10b71f4729d72a8841e1a7a41.jpg"};
 
@@ -12,6 +11,11 @@ function SignUpScreen({setIsLogin}) {
     return (
         <View style={styles.wrapper}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+                <View style={styles.tinyLogo}>
+                    <Image
+                        source={require('../../../images/logo.png')}
+                    />
+                </View>
                 <View style={styles.container}>
                     <View style={styles.header}>
                         <Text style={styles.heading}>
