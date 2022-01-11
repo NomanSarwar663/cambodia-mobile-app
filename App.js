@@ -2,8 +2,8 @@ import * as React from 'react';
 import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {LoginScreen} from "./src/components/auth/Login";
 
 function HomeScreen() {
     return (
@@ -13,10 +13,20 @@ function HomeScreen() {
     );
 }
 
-function SettingsScreen() {
+
+
+function Booking() {
     return (
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>Settings!</Text>
+            <Text>Booking!</Text>
+        </View>
+    );
+}
+
+function Favourite() {
+    return (
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Favourite!</Text>
         </View>
     );
 }
@@ -48,9 +58,9 @@ export default function App() {
                 tabBarInactiveTintColor: 'gray',
             })}>
                 <Tab.Screen name="Home" component={HomeScreen}/>
-                <Tab.Screen name="Booking" component={SettingsScreen}/>
-                <Tab.Screen name="Favourite" component={SettingsScreen}/>
-                <Tab.Screen name="Account" component={SettingsScreen}/>
+                <Tab.Screen name="Booking" component={Booking}/>
+                <Tab.Screen name="Favourite" component={Favourite}/>
+                <Tab.Screen name="Account" component={LoginScreen}/>
             </Tab.Navigator>
         </NavigationContainer>
     );
