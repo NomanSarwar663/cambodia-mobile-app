@@ -5,10 +5,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     container: {
+        position: "absolute",
+        bottom:0,
+        left:0,
+        right:0,
         backgroundColor: "white",
-        flex: 1,
-        marginTop: "50%",
-        borderRadius: 30,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
+        paddingBottom:20,
     },
     tinyLogo:{
         position:"absolute",
