@@ -1,23 +1,54 @@
 import {Image, ScrollView, Text, View} from "react-native";
 import * as React from "react";
 import styles from "./style"
-import {ImageBackground, TextInput} from "react-native";
+import {ImageBackground, TextInput, Keyboard} from "react-native";
 import {Button} from "react-native-elements"
 import {SocialButtons} from "./SocialButtons";
+import {useState, useEffect} from "react";
 
 const image = {uri: "https://i.pinimg.com/236x/0d/91/76/0d9176f10b71f4729d72a8841e1a7a41.jpg"};
 
 function LoginScreen() {
+    const [data, setData] = useState({
+        email: '',
+        password: ''
+    })
+    const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
+    useEffect(() => {
+        const keyboardDidShowListener = Keyboard.addListener(
+            'keyboardDidShow',
+            () => {
+                setKeyboardVisible(true); // or some other action
+            }
+        );
+        const keyboardDidHideListener = Keyboard.addListener(
+            'keyboardDidHide',
+            () => {
+                setKeyboardVisible(false); // or some other action
+            }
+        );
+
+        return () => {
+            keyboardDidHideListener.remove();
+            keyboardDidShowListener.remove();
+        };
+    }, []);
+
     return (
         <ScrollView>
             <View style={styles.wrapper}>
                 <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-                    <View style={styles.tinyLogo}>
+                    <View style={!isKeyboardVisible ? styles.tinyLogo : {display: "none"}}>
                         <Image
                             source={require('../../../images/logo.png')}
                         />
                     </View>
-                    <View style={styles.container}>
+                    <View style={!isKeyboardVisible ? styles.container : {
+                        ...styles.container,
+                        position: "relative",
+                        marginTop:50
+                    }}>
                         <View style={styles.header}>
                             <Text style={styles.heading}>
                                 Log In or Create an account
@@ -29,9 +60,13 @@ function LoginScreen() {
                         <View style={styles.form}>
                             <Text style={styles.label}>Email Address</Text>
                             <TextInput
+                                name={"email"}
+                                onChangeText={(email) => {
+                                    setData({...data, email})
+                                }}
                                 placeholder="Email Address"
                                 style={styles.input}
-                                value={""}
+                                value={data.email}
                             />
 
                             <View style={{display: "flex", flexDirection: "row"}}>
@@ -54,9 +89,12 @@ function LoginScreen() {
                                 </Text>
                             </View>
                             <TextInput
+                                onChangeText={(password) => {
+                                    setData({...data, password})
+                                }}
                                 placeholder="Password"
                                 style={styles.input}
-                                value={""}
+                                value={data.password}
                             />
                             <View style={{
                                 display: "flex",
