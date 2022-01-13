@@ -16,9 +16,11 @@ const styles = StyleSheet.create({
     },
     tinyLogo: {
         position: "absolute",
-        top: 10,
-        left: "37%",
         alignItems: "center",
+        right: 0,
+        left: 0,
+        top: 30,
+        bottom: 0,
     },
     header: {
         paddingTop: 20,
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        height: 600,
+        height: 700,
         justifyContent: "center"
     },
 

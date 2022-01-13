@@ -12,13 +12,15 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
-        paddingBottom:20,
+        paddingBottom:40,
     },
     tinyLogo:{
         position:"absolute",
-        top:50,
-        left:"37%",
         alignItems: "center",
+        right:0,
+        left:0,
+        top:30,
+        bottom:0,
     },
     header: {
         paddingTop: 20,
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        height: 600,
+        height: 700,
         justifyContent: "center"
     },
 
