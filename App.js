@@ -3,16 +3,9 @@ import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {LoginScreen} from "./src/components/auth/Login";
 import Account from "./src/components/auth/index";
+import {HomeScreen} from "./src/components/home";
 
-function HomeScreen() {
-    return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>Home!</Text>
-        </View>
-    );
-}
 
 
 
@@ -58,7 +51,7 @@ export default function App() {
                 tabBarActiveTintColor: 'tomato',
                 tabBarInactiveTintColor: 'gray',
             })}>
-                <Tab.Screen name="Home" component={HomeScreen}/>
+                <Tab.Screen name="Home" options={{headerShown: false}} component={HomeScreen}/>
                 <Tab.Screen name="Booking" component={Booking}/>
                 <Tab.Screen name="Favourite" component={Favourite}/>
                 <Tab.Screen name="Account" component={Account}/>
