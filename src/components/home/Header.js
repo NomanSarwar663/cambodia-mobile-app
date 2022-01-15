@@ -4,10 +4,11 @@ import styles from "./style"
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 
-function Header() {
+function Header({navigation}) {
     return (
         <View style={styles.header}>
-            <Ionicons style={{flex: 1}} name={'ios-menu'} size={40} color={'#fff'}/>
+            <Ionicons onPress={() => navigation.openDrawer()} style={{flex: 1}} name={'ios-menu'} size={40}
+                      color={'#fff'}/>
             <Ionicons name={'ios-notifications'} size={40} color={'#fff'}/>
         </View>
     );

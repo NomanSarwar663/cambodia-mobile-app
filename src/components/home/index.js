@@ -12,7 +12,7 @@ import {Destinations} from "./Destinations";
 import {CategoryItem} from "./categoryItem";
 
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
     const [data, setData] = useState({
         email: '',
         password: ''
@@ -43,7 +43,7 @@ function HomeScreen() {
         <ScrollView>
             <View style={styles.wrapper}>
                 <ImageBackground source={require('./home.jpeg')} resizeMode="cover" style={styles.image}>
-                    <Header/>
+                    <Header navigation={navigation}/>
                     <SearchForm/>
                 </ImageBackground>
                 <Destinations/>
