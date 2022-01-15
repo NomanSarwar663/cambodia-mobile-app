@@ -9,6 +9,7 @@ import {createDrawerNavigator} from "@react-navigation/drawer";
 import {SignUpScreen} from "./src/components/auth/SignUp";
 import {LoginScreen} from "./src/components/auth/Login";
 import {UserAccessScreen} from "./src/components/UserAccessScreen";
+import {BookingHistory} from "./src/components/BookingHistory";
 
 
 
@@ -46,9 +47,8 @@ const DrawerNavigator = () => {
             <Drawer.Screen options={{
                 headerShown:false
             }} name="Home" component={HomeScreen}/>
-            <Drawer.Screen options={{
-                headerShown:true
-            }} name="UserAccessScreen" component={UserAccessScreen}/>
+            <Drawer.Screen name="User Access Screen" component={UserAccessScreen}/>
+            <Drawer.Screen name="Booking History" component={BookingHistory}/>
         </Drawer.Navigator>
     );
 };

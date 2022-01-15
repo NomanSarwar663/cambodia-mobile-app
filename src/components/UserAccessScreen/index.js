@@ -1,4 +1,4 @@
-import {Image, ScrollView, Text, View} from "react-native";
+import {Image, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import * as React from "react";
 import styles from "./style"
 import {ImageBackground, TextInput, Keyboard} from "react-native";
@@ -16,7 +16,7 @@ const listItems = [
     {icon: "lock-closed-outline", title: "Logout"},
 ]
 
-function UserAccessScreen() {
+function UserAccessScreen(props) {
     const [data, setData] = useState({
         email: '',
         password: ''
@@ -84,12 +84,16 @@ function UserAccessScreen() {
                     <View style={styles.listContainer}>
                         {
                             listItems.map(item => {
-                                return <View key={item.title} style={styles.list}>
-                                    <View style={{marginRight: 5}}>
-                                        <Ionicons name={item.icon} color={"red"} size={30}/>
+                                return <TouchableOpacity onPress={()=>{
+                                    props.navigation.navigate(item.title)
+                                }}>
+                                    <View key={item.title} style={styles.list}>
+                                        <View style={{marginRight: 5}}>
+                                            <Ionicons name={item.icon} color={"red"} size={30}/>
+                                        </View>
+                                        <Text style={styles.listText}>{item.title}</Text>
                                     </View>
-                                    <Text style={styles.listText}>{item.title}</Text>
-                                </View>
+                                </TouchableOpacity>
                             })
                         }
                     </View>
