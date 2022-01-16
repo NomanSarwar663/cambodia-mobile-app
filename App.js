@@ -10,6 +10,7 @@ import {SignUpScreen} from "./src/components/auth/SignUp";
 import {LoginScreen} from "./src/components/auth/Login";
 import {UserAccessScreen} from "./src/components/UserAccessScreen";
 import {BookingHistory} from "./src/components/BookingHistory";
+import {Wishlist} from "./src/components/WishList";
 
 
 
@@ -49,6 +50,7 @@ const DrawerNavigator = () => {
             }} name="Home" component={HomeScreen}/>
             <Drawer.Screen name="User Access Screen" component={UserAccessScreen}/>
             <Drawer.Screen name="Booking History" component={BookingHistory}/>
+            <Drawer.Screen name="Wishlist" component={Wishlist}/>
         </Drawer.Navigator>
     );
 };
