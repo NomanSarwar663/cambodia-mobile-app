@@ -1,48 +1,20 @@
-import {Image, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import {ScrollView, Text, TouchableOpacity, View} from "react-native";
 import * as React from "react";
 import styles from "./style"
-import {ImageBackground, TextInput, Keyboard} from "react-native";
-import {Avatar, Button} from "react-native-elements"
-import {useState, useEffect} from "react";
+import {Avatar} from "react-native-elements"
 import {avatarImage} from "./Avatar";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const listItems = [
     {icon: "time-outline", title: "Booking History"},
     {icon: "heart-outline", title: "Wishlist"},
-    {icon: "card-outline", title: "Verifications"},
+    {icon: "card-outline", title: "Verifications",href:"Update Verification Data"},
     {icon: "person-outline", title: "My Profile"},
     {icon: "lock-closed-outline", title: "Change Password"},
     {icon: "lock-closed-outline", title: "Logout"},
 ]
 
 function UserAccessScreen(props) {
-    const [data, setData] = useState({
-        email: '',
-        password: ''
-    })
-    const [isKeyboardVisible, setKeyboardVisible] = useState(false);
-
-    useEffect(() => {
-        const keyboardDidShowListener = Keyboard.addListener(
-            'keyboardDidShow',
-            () => {
-                setKeyboardVisible(true); // or some other action
-            }
-        );
-        const keyboardDidHideListener = Keyboard.addListener(
-            'keyboardDidHide',
-            () => {
-                setKeyboardVisible(false); // or some other action
-            }
-        );
-
-        return () => {
-            keyboardDidHideListener.remove();
-            keyboardDidShowListener.remove();
-        };
-    }, []);
-
     return (
         <View style={styles.wrapper}>
             <ScrollView>
@@ -83,9 +55,11 @@ function UserAccessScreen(props) {
                     </View>
                     <View style={styles.listContainer}>
                         {
-                            listItems.map(item => {
-                                return <TouchableOpacity onPress={()=>{
-                                    props.navigation.navigate(item.title)
+                            listItems.map((item,index) => {
+                                return <TouchableOpacity
+                                    key={index}
+                                    onPress={()=>{
+                                    props.navigation.navigate(item.href||item.title)
                                 }}>
                                     <View key={item.title} style={styles.list}>
                                         <View style={{marginRight: 5}}>

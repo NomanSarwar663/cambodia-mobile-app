@@ -11,7 +11,8 @@ import {LoginScreen} from "./src/components/auth/Login";
 import {UserAccessScreen} from "./src/components/UserAccessScreen";
 import {BookingHistory} from "./src/components/BookingHistory";
 import {Wishlist} from "./src/components/WishList";
-
+import {VerificationScreen} from "./src/components/VerificationScreen";
+import {UpdateVerificationData} from "./src/components/VerificationScreen/UpdateDate";
 
 
 function Booking() {
@@ -35,6 +36,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
     return (
         <NavigationContainer>
+            {/*<TabNavigation/>*/}
             <DrawerNavigator/>
         </NavigationContainer>
     );
@@ -51,6 +53,8 @@ const DrawerNavigator = () => {
             <Drawer.Screen name="User Access Screen" component={UserAccessScreen}/>
             <Drawer.Screen name="Booking History" component={BookingHistory}/>
             <Drawer.Screen name="Wishlist" component={Wishlist}/>
+            <Drawer.Screen name="Verifications" component={VerificationScreen}/>
+            <Drawer.Screen name="Update Verification Data" component={UpdateVerificationData}/>
         </Drawer.Navigator>
     );
 };
